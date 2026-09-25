@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WanderLust</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@700;900&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop') no-repeat center/cover;
+  height: 100vh;
+  position: relative;
+}
+
+/* overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(220,38,38,0.85), rgba(251,146,60,0.75));
+}
+
+/* content */
+.content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* TITLE */
+.title {
+  font-family: 'Pacifico', cursive;
+  font-size: 100px;
+  line-height: 1;
+}
+
+.title span {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 80px;
+}
+
+/* text */
+.subtitle {
+  margin-top: 20px;
+  font-size: 22px;
+}
+
+.desc {
+  margin-top: 10px;
+  max-width: 500px;
+  opacity: 0.9;
+}
+
+/* button */
+.btn {
+  margin-top: 30px;
+  background: white;
+  color: #dc2626;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: #f3f4f6;
+}
+
+/* plane */
+.plane {
+  position: absolute;
+  top: 80px;
+  left: -100px;
+  font-size: 35px;
+  animation: fly 10s linear infinite;
+}
+
+.plane::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 4px;
+  background: rgba(255,255,255,0.7);
+  top: 50%;
+  left: -120px;
+  border-radius: 50%;
+}
+
+@keyframes fly {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(120vw); }
+}
+
+/* stats section */
+.stats {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  z-index: 10;
+  color: white;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.stat p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* animation */
+.fade {
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* responsive */
+@media(max-width: 768px){
+  .title { font-size: 60px; }
+  .title span { font-size: 50px; }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+  <!-- airplane -->
+  <div class="plane">✈️</div>
+
+  <!-- main content -->
+  <div class="content fade">
+
+    <h1 class="title">
+      Wander
+      <span>Lust</span>
+    </h1>
+
+    <p class="subtitle">Find your happy place ✈️</p>
+
+    <p class="desc">
+      Discover amazing places, hidden gems, and unforgettable travel experiences across the world.
+    </p>
+
+    <a href="/listings" class="btn">Start Exploring →</a>
+
+  </div>
+
+  <!-- stats -->
+  <div class="stats">
+    <div class="stat">
+      <h2>500+</h2>
+      <p>Destinations</p>
+    </div>
+    <div class="stat">
+      <h2>10K+</h2>
+      <p>Travelers</p>
+    </div>
+    <div class="stat">
+      <h2>4.9⭐</h2>
+      <p>Rating</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

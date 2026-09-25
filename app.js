@@ -1,4 +1,4 @@
-if(process.env.NODE_ENV != "rpoduction"){
+if(process.env.NODE_ENV != "production"){
     require("dotenv").config();
 }
 //console.log(process.env.SECRET)
@@ -115,7 +115,9 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("error", { message, statusCode });
 });
 
-app.listen(8080,()=>{
-    console.log(`server is listening to port 8080`);
-})
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT,()=>{
+    console.log(`server is listening to port ${PORT}`);
+});
 
